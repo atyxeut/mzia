@@ -29,6 +29,25 @@ namespace test::aatk::util {
 
 using namespace ::aatk;
 
+export consteval void aatk_array_should_be_nested_std_array() noexcept
+{
+  using T1 = std::array<double, 10>;
+  using T1_ = array<double, 10>;
+  static_assert(std::same_as<T1, T1_>);
+
+  using T2 = std::array<std::array<double, 2>, 3>;
+  using T2_ = array<double, 3, 2>;
+  static_assert(std::same_as<T2, T2_>);
+
+  using T3 = std::array<std::array<std::array<std::array<int, 2>, 3>, 4>, 5>;
+  using T3_ = array<int, 5, 4, 3, 2>;
+  static_assert(std::same_as<T3, T3_>);
+
+  using T4 = std::array<std::array<std::array<std::array<std::vector<int>, 0>, 2>, 4>, 7>;
+  using T4_ = array<std::vector<int>, 7, 4, 2, 0>;
+  static_assert(std::same_as<T4, T4_>);
+}
+
 export consteval void aatk_vector_should_be_nested_std_vector() noexcept
 {
   using T1 = std::vector<double>;

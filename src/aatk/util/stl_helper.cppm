@@ -34,9 +34,8 @@ struct array_impl<T, Dim>
 };
 
 template <typename T, std::size_t Dim, std::size_t... Dims>
-struct array_impl<T, Dim, Dims...>
+struct array_impl<T, Dim, Dims...> : array_impl<typename array_impl<T, Dims...>::type, Dim>
 {
-  using type = std::array<typename array_impl<T, Dims...>::type, Dim>;
 };
 
 } // namespace detail
