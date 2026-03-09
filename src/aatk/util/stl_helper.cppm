@@ -275,8 +275,7 @@ export namespace aatk {
 template <typename... Ts, std::convertible_to<std::string> Delim>
 void print(std::ostream& ostr, const std::tuple<Ts...>& t, Delim&& delim, bool new_line = false)
 {
-  [&]<std::size_t... Is>(std::index_sequence<Is...>)
-  {
+  [&]<std::size_t... Is>(std::index_sequence<Is...>) {
     ((ostr << std::get<Is>(t) << (Is + 1 == sizeof...(Ts) ? std::string {} : delim)), ...);
   }(std::index_sequence_for<Ts...> {});
 

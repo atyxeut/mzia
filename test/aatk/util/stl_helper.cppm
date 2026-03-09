@@ -81,12 +81,10 @@ export consteval void every_empty_allocator_template_parameter_of_aatk_vector_de
 
 export void does_make_vector_work()
 {
-  auto get_v1 = [] consteval noexcept
-  {
+  auto get_v1 = [] consteval noexcept {
     return std::vector<double>(3, 3.14);
   };
-  auto get_v1_ = [] consteval noexcept
-  {
+  auto get_v1_ = [] consteval noexcept {
     return make_vector<double>(3, 3.14);
   };
   static_assert(get_v1() == get_v1_());
@@ -183,9 +181,6 @@ export void common_ranges_output_with_custom_print_and_std_ostream() noexcept
   std::cout << '\n';
 }
 
-export void multidimensional_ranges_output_with_custom_print_and_std_ostream() noexcept
-{
-  
-}
+export void multidimensional_ranges_output_with_custom_print_and_std_ostream() noexcept {}
 
 } // namespace test::aatk::util

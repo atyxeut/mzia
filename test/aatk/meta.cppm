@@ -204,8 +204,7 @@ export consteval void does_concat_work() noexcept
   static_assert(std::same_as<concat_t<list_2, list_1>, indexed_concatenation_of_2_1>);
 
   // check SFINAE functionality
-  auto concat_with_duplication_fails = []<typename List1, typename List2> consteval noexcept
-  {
+  auto concat_with_duplication_fails = []<typename List1, typename List2> consteval noexcept {
     return !(requires { typename concat_t<List1, List2>; });
   };
   static_assert(concat_with_duplication_fails.operator ()<list_1, list_3>());
@@ -226,8 +225,7 @@ export consteval void does_reverse_work() noexcept
 export consteval void does_init_work() noexcept
 {
   // force a template substitution to make `requires` work
-  auto test_empty_list = []<typename T> consteval noexcept
-  {
+  auto test_empty_list = []<typename T> consteval noexcept {
     return requires { typename init_t<T>; };
   };
   static_assert(test_empty_list.operator ()<empty_type_list>() == false);
