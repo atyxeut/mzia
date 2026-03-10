@@ -163,7 +163,7 @@ export auto& operator >>(std::istream& istr, u128& n)
   istr >> buffer;
 
   n = 0;
-  for (auto ch : buffer)
+  for (char ch : buffer)
     n = n * 10 + static_cast<u128>(ch - '0');
 
   return istr;
@@ -174,10 +174,12 @@ export auto& operator >>(std::istream& istr, i128& n)
   std::string buffer;
   istr >> buffer;
 
-  u128 mag = 0;
   const int sgn = buffer[0] == '-' ? -1 : 1;
-  for (std::size_t i = sgn < 0; i < buffer.size(); ++i)
+
+  u128 mag = 0;
+  for (usize i = sgn < 0; i < buffer.size(); ++i)
     mag = mag * 10 + static_cast<u128>(buffer[i] - '0');
+
   if (mag > std::numeric_limits<i128>::max() || sgn > 0)
     n = static_cast<i128>(mag);
   else
@@ -188,65 +190,31 @@ export auto& operator >>(std::istream& istr, i128& n)
 
 export auto& operator <<(std::ostream& ostr, u128 n)
 {
-  if (n == 0)
-    return ostr << 0;
+  if (n == 0) {
+    ostr << '0';
+    return ostr;
+  }
 
   std::string buffer;
-  for (; n; n /= 10)
+  for (; n; n /= 10) {
     buffer += static_cast<char>(n % 10 + '0');
-  std::ranges::reverse(buffer);
-
-  return ostr << buffer;
+  }
+  std::reverse(buffer.begin(), buffer.end());
+  ostr << buffer;
+  return ostr;
 }
 
 export auto& operator <<(std::ostream& ostr, i128 n)
 {
   if (n == std::numeric_limits<i128>::min())
-    return ostr << '-' << static_cast<u128>(n);
+    ostr << '-' << static_cast<u128>(n);
+  else if (n < 0)
+    ostr << '-' << static_cast<u128>(-n);
+  else
+    ostr << static_cast<u128>(n);
 
-  if (n < 0)
-    return ostr << '-' << static_cast<u128>(-n);
-
-  return ostr << static_cast<u128>(n);
+  return ostr;
 }
-
-// template <>
-// struct std::formatter<u128>
-// {
-//   constexpr auto parse(auto& parse_ctx) { return parse_ctx.begin(); }
-
-//   auto format(u128 n, auto& fmt_ctx) const
-//   {
-//     std::string buffer;
-//     if (n == 0) {
-//       buffer += '0';
-//     }
-//     else {
-//       for (; n; n /= 10)
-//         buffer += static_cast<char>(n % 10 + '0');
-//       std::ranges::reverse(buffer);
-//     }
-
-//     return std::format_to(fmt_ctx.out(), "{}", buffer);
-//   }
-// };
-
-// template <>
-// struct std::formatter<i128>
-// {
-//   constexpr auto parse(auto& parse_ctx) { return parse_ctx.begin(); }
-
-//   auto format(i128 n, auto& fmt_ctx) const
-//   {
-//     if (n == std::numeric_limits<i128>::min())
-//       return std::format_to(fmt_ctx.out(), "-{}", static_cast<u128>(n));
-
-//     if (n < 0)
-//       return std::format_to(fmt_ctx.out(), "-{}", static_cast<u128>(-n));
-
-//     return std::format_to(fmt_ctx.out(), "{}", static_cast<u128>(n));
-//   }
-// };
 
 export namespace aatk::meta {
 

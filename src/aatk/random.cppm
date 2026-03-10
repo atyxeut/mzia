@@ -61,10 +61,12 @@ export template <bool OnlyPositiveInteger = false>
 
   if (!OnlyPositiveInteger & rand(0uz, 1uz))
     data += '-';
-  data += decimal_digit_character[rand(1uz, 9uz)];
+
   auto dist = uniform_distribution(0uz, 9uz);
+  data += decimal_digit_character[rand(1uz, 9uz)];
   while (integer_length-- > 1)
     data += decimal_digit_character[dist(mt19937_engine)];
+
   return data;
 }
 
