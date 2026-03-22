@@ -92,7 +92,7 @@ export template <bool FlowerGraph = false, std::integral T>
   const auto p = permutation(vertex_begin, vertex_end);
 
   const auto edge_cnt = vertex_end - vertex_begin;
-  graph::edge_list<T> data;
+  graph::unweighted_edge_list<T> data;
   data.reserve(edge_cnt);
 
   for (auto v = 1uz; v <= edge_cnt; ++v) {
@@ -118,7 +118,7 @@ export template <bool FlowerGraph = false, std::integral Vertex, std::integral W
   const auto p = permutation(vertex_begin, vertex_end);
 
   const auto edge_cnt = vertex_end - vertex_begin;
-  graph::edge_list<Vertex, Weight> data;
+  graph::weighted_edge_list<Vertex, Weight> data;
   data.reserve(edge_cnt);
 
   auto w_dist = uniform_dist(weight_begin, weight_end);
@@ -133,4 +133,3 @@ export template <bool FlowerGraph = false, std::integral Vertex, std::integral W
 }
 
 } // namespace mzia::random::generate
-

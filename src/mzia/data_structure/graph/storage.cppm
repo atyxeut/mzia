@@ -19,7 +19,7 @@ import std;
 
 import mzia.math;
 
-namespace mzia::graph {
+export namespace mzia::graph {
 
 template <typename>
 struct weight;
@@ -54,30 +54,48 @@ struct edge : weight<Weight>
   Vertex v;
 };
 
-export template <std::integral Vertex, typename Weight = void>
-class edge_list
+}; // namespace mzia::graph
+
+namespace mzia::graph {
+
+namespace detail {
+
+template <typename Vertex, typename Weight>
+class edge_list_base
 {
+protected:
   std::vector<edge<Vertex, Weight>> edges_;
 
 public:
-  [[nodiscard]] constexpr const auto& operator [](usize idx) const { return edges_[idx]; }
-  [[nodiscard]] auto& operator [](usize idx) { return edges_[idx]; }
-
-  constexpr auto begin() const noexcept { return edges_.begin(); }
-  constexpr auto begin() noexcept { return edges_.begin(); }
-
-  constexpr auto end() const noexcept { return edges_.end(); }
-  constexpr auto end() noexcept { return edges_.end(); }
-
   [[nodiscard]] constexpr auto size() const noexcept { return edges_.size(); }
-  constexpr void reserve(usize capacity) { edges_.reserve(capacity); }
 
-  template <typename... Args>
-  constexpr auto& add_edge(Args... args)
-  {
-    return edges_.emplace_back(std::forward<Args>(args)...);
-  }
+  [[nodiscard]] constexpr auto begin() noexcept { return edges_.begin(); }
+  [[nodiscard]] constexpr auto begin() const noexcept { return edges_.begin(); }
+
+  [[nodiscard]] constexpr auto end() noexcept { return edges_.end(); }
+  [[nodiscard]] constexpr auto end() const noexcept { return edges_.end(); }
+
+  [[nodiscard]] auto& operator [](usize idx) { return edges_[idx]; }
+  [[nodiscard]] constexpr const auto& operator [](usize idx) const { return edges_[idx]; }
+
+  constexpr void reserve(usize capacity) { edges_.reserve(capacity); }
+};
+
+} // namespace detail
+
+export template <std::integral Vertex>
+class unweighted_edge_list : public detail::edge_list_base<Vertex, void>
+{
+public:
+  constexpr auto& add_edge(Vertex u, Vertex v) { return this->edges_.emplace_back(u, v); }
+};
+
+export template <std::integral Vertex, meta::arithmetic Weight>
+class weighted_edge_list : public detail::edge_list_base<Vertex, Weight>
+{
+public:
+  constexpr auto& add_edge(Vertex u, Vertex v, const Weight& w) { return this->edges_.emplace_back(u, v, w); }
+  constexpr auto& add_edge(Vertex u, Vertex v, Weight&& w) { return this->edges_.emplace_back(u, v, std::move(w)); }
 };
 
 } // namespace mzia::graph
-
