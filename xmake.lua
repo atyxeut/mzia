@@ -13,8 +13,8 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-set_xmakever("3.0.6")
-set_project("modern-fast-implementations-of-algorithms")
+set_xmakever("3.0.7")
+set_project("fast-modern-implementations-of-algorithms")
 set_languages("c++latest")
 
 add_rules("mode.debug", "mode.release")

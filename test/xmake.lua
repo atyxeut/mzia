@@ -13,14 +13,14 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-target("test-mzia")
+target("test-fmia")
   set_kind("object")
-  add_deps("mzia");
+  add_deps("fmia");
   add_files("**.cppm", { public = true })
 target_end()
 
 target("test-main")
   set_kind("binary")
-  add_deps("test-mzia")
+  add_deps("test-fmia")
   add_files("main.cpp")
 target_end()
