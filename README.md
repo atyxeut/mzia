@@ -6,6 +6,6 @@ A high performance, safe C++ library built with pure modules, chasing the latest
 
 This project is licensed under the **GNU GPL 3.0 or later**, see [`COPYING`](COPYING).
 
-However, the core library is licensed under the **GNU LGPL 3.0 or later**, see [`COPYING.LESSER`](COPYING.LESSER).
+However, the core library is excepted and licensed under the **GNU LGPL 3.0 or later**, see [`COPYING.LESSER`](COPYING.LESSER).
 
 Refer to the notice at the top of each file for license details.
