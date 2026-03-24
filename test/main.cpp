@@ -30,4 +30,3 @@ int main()
   test::fmia::util::common_ranges_output_with_custom_print_and_std_ostream();
   test::fmia::util::multidimensional_ranges_output_with_custom_print_and_std_ostream();
 }
-

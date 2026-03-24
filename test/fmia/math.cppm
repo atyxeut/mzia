@@ -17,4 +17,3 @@ export module test.fmia.math;
 
 export import test.fmia.math.floating_point;
 export import test.fmia.math.integer;
-

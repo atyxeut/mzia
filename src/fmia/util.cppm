@@ -62,5 +62,3 @@ export template <std::ranges::input_range Range>
 }
 
 } // namespace fmia
-
-

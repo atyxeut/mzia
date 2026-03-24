@@ -236,5 +236,3 @@ export void general_form(u32 disk_cnt, std::span<const u32> from_list, std::span
 }
 
 } // namespace fmia::tower_of_hanoi::print_moves
-
-

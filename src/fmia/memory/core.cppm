@@ -85,5 +85,3 @@ enum class exception_safety {
 };
 
 } // namespace fmia
-
-

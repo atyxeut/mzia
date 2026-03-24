@@ -62,5 +62,3 @@ template <typename T>
 constexpr bool is_std_duration_v = is_std_duration<T>::value;
 
 } // namespace fmia::meta
-
-

@@ -75,5 +75,3 @@ export template <typename From, typename To>
 using claim_cv_t = claim_cv<From, To>::type;
 
 } // namespace fmia::meta
-
-

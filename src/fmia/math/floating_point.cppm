@@ -16,5 +16,3 @@
 export module fmia.math.floating_point;
 
 export import fmia.math.floating_point.core;
-
-

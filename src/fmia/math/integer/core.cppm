@@ -410,5 +410,3 @@ export template <typename T>
 using make_larger_width_t = make_larger_width<T>::type;
 
 } // namespace fmia::meta
-
-

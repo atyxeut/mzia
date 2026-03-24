@@ -17,5 +17,3 @@ export module test.fmia.util.std_extension.meta;
 
 export import test.fmia.util.std_extension.meta.core;
 export import test.fmia.util.std_extension.meta.type_list;
-
-

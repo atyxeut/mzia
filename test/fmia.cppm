@@ -18,4 +18,3 @@ export module test.fmia;
 export import test.fmia.data_structure;
 export import test.fmia.math;
 export import test.fmia.util;
-

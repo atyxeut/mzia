@@ -17,4 +17,3 @@ export module test.fmia.util;
 
 export import test.fmia.util.misc;
 export import test.fmia.util.std_extension;
-

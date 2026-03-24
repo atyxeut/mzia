@@ -27,5 +27,3 @@ template <typename T>
 concept arithmetic = integral<T> || floating_point<T>;
 
 } // namespace fmia::meta
-
-

@@ -96,5 +96,3 @@ void does_make_vector_work()
 }
 
 } // namespace test::fmia::util
-
-

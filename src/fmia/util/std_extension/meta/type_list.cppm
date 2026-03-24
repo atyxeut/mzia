@@ -873,5 +873,3 @@ export template <typename T, typename U>
 constexpr bool has_none_v = has_none<T, U>::value;
 
 } // namespace fmia::meta
-
-

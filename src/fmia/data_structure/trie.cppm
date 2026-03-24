@@ -17,5 +17,3 @@ export module fmia.data_structure.trie;
 
 export import fmia.data_structure.trie.flat;
 export import fmia.data_structure.trie.vanilla;
-
-

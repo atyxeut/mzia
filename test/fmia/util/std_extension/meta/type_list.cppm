@@ -514,5 +514,3 @@ consteval void does_is_predicate_work() noexcept
 }
 
 } // namespace test::fmia::meta
-
-

@@ -16,5 +16,3 @@
 export module fmia.memory;
 
 export import fmia.memory.core;
-
-

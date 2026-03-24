@@ -172,5 +172,3 @@ void multidimensional_ranges_output_with_custom_print_and_std_ostream() noexcept
 }
 
 } // namespace test::fmia::util
-
-

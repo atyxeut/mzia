@@ -18,5 +18,3 @@ export module fmia.data_structure.binary_search_tree;
 export import fmia.data_structure.binary_search_tree.avl_tree;
 export import fmia.data_structure.binary_search_tree.naive;
 export import fmia.data_structure.binary_search_tree.red_black_tree;
-
-

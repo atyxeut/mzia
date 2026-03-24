@@ -21,5 +21,3 @@ export import fmia.data_structure.heap;
 export import fmia.data_structure.segment_tree;
 export import fmia.data_structure.trie;
 export import fmia.data_structure.union_find;
-
-

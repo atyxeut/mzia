@@ -157,4 +157,3 @@ auto& operator <<(std::ostream& ostr, const T (&arr)[N])
   ::fmia::print(ostr, arr);
   return ostr;
 }
-

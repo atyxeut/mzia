@@ -18,5 +18,3 @@ export module fmia.simd;
 namespace fmia::simd {
 
 } // namespace fmia::simd
-
-

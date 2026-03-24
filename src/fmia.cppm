@@ -22,4 +22,3 @@ export import fmia.memory;
 export import fmia.random;
 export import fmia.simd;
 export import fmia.util;
-

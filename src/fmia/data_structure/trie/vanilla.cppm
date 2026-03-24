@@ -299,5 +299,3 @@ export template <typename Char, std::regular_invocable<Char> HashFn, exception_s
 using hash_trie = detail::trie_base<Char, detail::trie_normal_hash_map<Char, HashFn, std::unordered_map>, ExceptionSafety>;
 
 } // namespace fmia
-
-

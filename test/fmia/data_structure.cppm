@@ -16,4 +16,3 @@
 export module test.fmia.data_structure;
 
 export import test.fmia.data_structure.trie;
-

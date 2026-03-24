@@ -16,5 +16,3 @@
 export module fmia.util.misc;
 
 export import fmia.util.misc.tower_of_hanoi;
-
-

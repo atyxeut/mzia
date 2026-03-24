@@ -203,5 +203,3 @@ template <typename T>
 concept enum_flag = is_enum_flag_v<T>;
 
 } // namespace fmia::meta
-
-

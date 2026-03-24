@@ -19,5 +19,3 @@ export import fmia.data_structure.union_find.persistent;
 export import fmia.data_structure.union_find.undoable;
 export import fmia.data_structure.union_find.vanilla;
 export import fmia.data_structure.union_find.weighted;
-
-

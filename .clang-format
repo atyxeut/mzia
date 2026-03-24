@@ -11,7 +11,7 @@ MaxEmptyLinesToKeep: 1
 LineEnding: LF
 RemoveEmptyLinesInUnwrappedLines: true
 KeepEmptyLines:
-  AtEndOfFile: true
+  AtEndOfFile: false
   AtStartOfBlock: true
   AtStartOfFile: false
 BreakAdjacentStringLiterals: true

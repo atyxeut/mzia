@@ -41,5 +41,3 @@ consteval void does_make_higher_precision_work()
 }
 
 } // namespace test::fmia::meta
-
-

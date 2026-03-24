@@ -18,5 +18,3 @@ export module test.fmia.util.misc;
 import std;
 
 import fmia.util.misc;
-
-

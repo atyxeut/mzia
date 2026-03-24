@@ -20,5 +20,3 @@ export import fmia.data_structure.segment_tree.iterative;
 export import fmia.data_structure.segment_tree.multidimentional;
 export import fmia.data_structure.segment_tree.persistent;
 export import fmia.data_structure.segment_tree.recursive;
-
-

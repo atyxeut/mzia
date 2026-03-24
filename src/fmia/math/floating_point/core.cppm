@@ -186,5 +186,3 @@ export template <typename T>
 using make_higher_precision_t = make_higher_precision<T>::type;
 
 } // namespace fmia::meta
-
-

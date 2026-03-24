@@ -99,5 +99,3 @@ export void int128_output_with_std_ostream_and_std_print() noexcept
 }
 
 } // namespace test::fmia::math
-
-

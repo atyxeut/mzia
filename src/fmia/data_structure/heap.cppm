@@ -18,5 +18,3 @@ export module fmia.data_structure.heap;
 export import fmia.data_structure.heap.binary;
 export import fmia.data_structure.heap.binomial;
 export import fmia.data_structure.heap.fibonacci;
-
-

@@ -174,5 +174,3 @@ export template <typename Elem, typename InnermostDimAllocator = std_allocator_t
 }
 
 } // namespace fmia
-
-
